@@ -8,13 +8,14 @@ const Footer = () => {
             clearInterval(timer)
         }
     })
+    
   return (
-    <footer className='flex flex-row justify-between my-auto bg-blue-400 text-yellow-300 w-full h-10 '>
+    <footer className='flex flex-row justify-between my-auto bg-blue-500 text-white w-full h-20 px-10'>
         <div>
             {time.toLocaleTimeString()}
         </div>
         <div>
-            Copyright 
+            Copyright {time.getFullYear()} 
         </div>
         <div>
             Na stronie zjaduje się obecnie: <span className='text-xl text-red-600 font-bold '>X</span> Artykułów

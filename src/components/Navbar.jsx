@@ -1,16 +1,17 @@
 import React from "react";
-
-const Navbar = () => {
+import {BiTable} from "react-icons/bi";
+import {MdTableRows} from 'react-icons/md'
+const Navbar = ({handleTiles, tiles}) => {
   return (
     <nav>
-      <div className="flex flex-row justify-around ">
-        <div>
-          
-            <h1 className="font-2xl font-bold text-yellow-300">RealNews</h1>
-          
+      <div className="flex flex-row justify-between h-20 bg-blue-500 px-10 text-white">
+        <div className="my-auto">
+            <h1 className="text-4xl font-bold  ">RealNews</h1>
         </div>
-        <div>
-            
+        <div className="my-auto text-xl">
+            <button type="button" onClick={handleTiles} className='cursor-pointer ' >
+              {tiles ?  <MdTableRows/> : <BiTable/>}
+            </button>
         </div>
       </div>
     </nav>
