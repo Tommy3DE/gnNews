@@ -2,6 +2,7 @@ import React from "react";
 import {BiTable} from "react-icons/bi";
 import {MdTableRows} from 'react-icons/md'
 import { BsFileEarmarkText } from 'react-icons/bs'
+import {AiOutlineCloseSquare} from 'react-icons/ai'
 const Navbar = ({handleTiles, tiles, setShowModal, showModal}) => {
   
 
@@ -16,7 +17,7 @@ const Navbar = ({handleTiles, tiles, setShowModal, showModal}) => {
               {tiles ?  <MdTableRows/> : <BiTable/>}
             </button>}
             <button type="button" className='cursor-pointer hover:scale-110 mx-1' onClick={()=>setShowModal(prev=>!prev)} >
-                <BsFileEarmarkText/>
+                {!showModal ?<BsFileEarmarkText/>:<button><AiOutlineCloseSquare/></button>}
             </button>
         </div>
       </div>
