@@ -8,9 +8,12 @@ const Navbar = ({handleTiles, tiles}) => {
         <div className="my-auto">
             <h1 className="text-4xl font-bold  ">RealNews</h1>
         </div>
-        <div className="my-auto text-xl">
-            <button type="button" onClick={handleTiles} className='cursor-pointer ' >
+        <div className="my-auto text-2xl">
+            <button type="button" onClick={handleTiles} className='cursor-pointer hover:scale-110 ' >
               {tiles ?  <MdTableRows/> : <BiTable/>}
+            </button>
+            <button>
+              
             </button>
         </div>
       </div>
