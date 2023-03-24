@@ -10,7 +10,7 @@ const Footer = () => {
     })
     
   return (
-    <footer className='flex flex-row justify-between my-auto bg-blue-500 text-white w-full h-20 px-10'>
+    <footer className='flex flex-row justify-between items-center bg-blue-500 text-white w-full h-20 px-10'>
         <div>
             {time.toLocaleTimeString()}
         </div>

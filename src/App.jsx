@@ -15,9 +15,8 @@ function App() {
     <div>
       <Navbar handleTiles={handleTiles} tiles={tiles} setShowModal={setShowModal} showModal={showModal}/>
       {showModal && <Modal/>}
-      <Routes>
-        <Route exact path='/' component={<Main/>} />
-      </Routes>
+    
+      <Main/>
       <Footer/>
     </div>
   )
