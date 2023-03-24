@@ -10,7 +10,7 @@ const News = ({ articles, tiles }) => {
             <img
               src={article.urlToImage ? article.urlToImage : news}
               alt={article.author}
-              className="w-full p-1 rounded-lg"
+              className="w-full p-1 rounded-lg md:min-h-[200px] "
             />
             <h1 className="text-lg">{article.title}</h1>
             <div>

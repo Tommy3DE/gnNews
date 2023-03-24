@@ -1,42 +1,52 @@
 export const data = [
     {
         short: 'us',
-        name: 'Ameryka'
+        name: 'Ameryka',
+        enName: 'America'
     },
     {
         short: 'pl',
-        name: 'Polska'
+        name: 'Polska',
+        enName: 'Poland'
     },
     {
         short: 'gb',
-        name: 'Wlk. Bryt'
+        name: 'Wlk. Bryt',
+        enName: 'Gr. Britain'
     },
     {
         short: 'de',
-        name: 'Niemcy'
+        name: 'Niemcy',
+        enName: 'Germany'
     },
     {
         short: 'fr',
-        name: 'Francja'
+        name: 'Francja',
+        enName: 'France'
     },
     {
         short: 'jp',
-        name: 'Japonia'
+        name: 'Japonia',
+        enName: 'Japan'
     },
     {
         short: 'it',
-        name: 'Włochy'
+        name: 'Włochy',
+        enName: 'Italy'
     },
     {
         short: 'au',
-        name: 'Australia'
+        name: 'Australia',
+        enName: 'Australia'
     },
     {
         short: 'br',
-        name: 'Brazylia'
+        name: 'Brazylia',
+        enName: 'Brazil'
     },
     {
         short: 'ua',
-        name: 'Ukraina'
+        name: 'Ukraina',
+        enName: 'Ukraine'
     },
 ]
