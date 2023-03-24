@@ -16,7 +16,7 @@ const Sidebar = ({setCountry}) => {
             </Link>
           </li>
           <li className='pb-4'>
-            <Link to='/uk' onClick={()=>setCountry('uk')}>
+            <Link to='/gb' onClick={()=>setCountry('gb')}>
               Wielka Brytania
             </Link>
           </li>
@@ -31,8 +31,8 @@ const Sidebar = ({setCountry}) => {
             </Link>
           </li>
           <li className='pb-4'>
-            <Link to='/es' onClick={()=>setCountry('es')}>
-              Hiszpania
+            <Link to='/jp' onClick={()=>setCountry('jp')}>
+              Japonia
             </Link>
           </li>
           <li className='pb-4'>
@@ -48,6 +48,11 @@ const Sidebar = ({setCountry}) => {
           <li className='pb-4'>
             <Link to='/br' onClick={()=>setCountry('br')}>
               Brazylia
+            </Link>
+          </li>
+          <li className='pb-4'>
+            <Link to='/ua' onClick={()=>setCountry('ua')}>
+              Ukraina
             </Link>
           </li>
       </ul>
