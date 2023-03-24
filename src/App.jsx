@@ -32,7 +32,7 @@ function App() {
     <div>
       <Navbar handleTiles={handleTiles} tiles={tiles} setShowModal={setShowModal} showModal={showModal}/>
       {showModal && <Modal/>}
-      <Main articles={articles} setCountry={setCountry}/>
+      <Main articles={articles} setCountry={setCountry} tiles={tiles}/>
       <Footer articles={articles}/>
     </div>
   )

@@ -14,7 +14,7 @@ const Footer = ({articles}) => {
         <div>
             {time.toLocaleTimeString()}
         </div>
-        <div>
+        <div className='md:block hidden'>
             Copyright {time.getFullYear()} 
         </div>
         <div>

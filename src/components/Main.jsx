@@ -2,16 +2,11 @@ import React from 'react'
 import Sidebar from './Sidebar'
 
 import News from'./News'
-const Main = ({articles, setCountry}) => {
-
-  
-
+const Main = ({articles, setCountry, tiles}) => {
   return (
-    <main className='w-full h-4/5 flex flex-row '>
+    <main className='w-full flex flex-row '>
       <Sidebar setCountry={setCountry}/>
-      <div className=' bg-pink-100'>
-          <News articles={articles}/>
-      </div>
+      <News articles={articles} tiles={tiles}/>
     </main>
   )
 }
