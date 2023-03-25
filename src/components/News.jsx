@@ -10,11 +10,11 @@ const News = ({ articles, tiles }) => {
             <img
               src={article.urlToImage ? article.urlToImage : news}
               alt={article.author}
-              className="p-1 rounded-lg lg:min-h-44"
+              className="p-1 rounded-lg xl:h-[248px] h-fit"
             />
             
             <div>
-            <h1 className="text-lg font-bold">{article.title}</h1>
+              <h1 className="lg:text-lg text-base font-bold">{article.title}</h1>
               <p className="text-gray-600">
                 {article.source.name ? article.source.name : <p>Jane Doe</p>}
               </p>

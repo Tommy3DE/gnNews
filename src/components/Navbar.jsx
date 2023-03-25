@@ -29,7 +29,7 @@ const Navbar = ({
           )}
           <button
             type="button"
-            className="cursor-pointer hover:scale-110 mx-1"
+            className="cursor-pointer hover:scale-110 mx-1 lg:block hidden"
             onClick={() => setShowModal((prev) => !prev)}
           >
             {!showModal ? (
