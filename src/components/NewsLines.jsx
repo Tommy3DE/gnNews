@@ -1,5 +1,5 @@
 import React from "react";
-import news from "../../public/assets/news.jpeg";
+import news from "../assets/news.jpeg";
 
 const NewsLines = ({ articles }) => {
   return (

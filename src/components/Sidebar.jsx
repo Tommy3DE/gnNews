@@ -10,7 +10,7 @@ const Sidebar = ({setCountry, engVersion}) => {
         {data.map(country=>(
           <li className='pb-4 flex flex-row w-auto justify-center' key={country.short}>
             <Link to={`/${country.short}`} onClick={()=>setCountry(`${country.short}`)}>
-              {engVersion ?`${country.name}` : `${country.enName}`}
+              {!engVersion ?`${country.name}` : `${country.enName}`}
             </Link>
             <Flag code={`${country.short}`} className='h-5 mx-2 my-auto'/>
           </li>

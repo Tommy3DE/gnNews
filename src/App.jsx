@@ -24,15 +24,27 @@ function App() {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const response = await axios.get(
-        `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=12113e94f90644979de437693a1c9b48`
-      );
-      setArticles(response.data.articles);
-      console.log(response);
+      const cachedData = localStorage.getItem(`articles-${country}`);
+      if (cachedData) {
+        setArticles(JSON.parse(cachedData));
+        return;
+      }
+  
+      try {
+        const response = await axios.get(
+          `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=12113e94f90644979de437693a1c9b48`
+        );
+        setArticles(response.data.articles);
+        localStorage.setItem(`articles-${country}`, JSON.stringify(response.data.articles));
+      } catch (error) {
+        console.error(error);
+      }
     };
+  
     fetchArticles();
-    //korzystam z axios poniewaz jest  duzo lepszy od klasycznego fetcha
   }, [country]);
+
+  //korzystam z axios poniewaz jest  duzo lepszy od klasycznego fetcha, klucz apoi nie jest ukryty w .env bo to powszechnie dostepne API i nie ma takiej potrzeby
 
   return (
     <div>
@@ -45,7 +57,12 @@ function App() {
         engVersion={engVersion}
       />
       {showModal && <Modal />}
-      <Main articles={articles} setCountry={setCountry} tiles={tiles} engVersion={engVersion} />
+      <Main
+        articles={articles}
+        setCountry={setCountry}
+        tiles={tiles}
+        engVersion={engVersion}
+      />
       <Footer articles={articles} engVersion={engVersion} />
     </div>
   );
