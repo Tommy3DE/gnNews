@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 
 import News from "./News";
 import NewsLines from "./NewsLines";
+import NewsCard from "./NewsCard";
 const Main = ({ articles, setCountry, tiles, engVersion }) => {
+  const [showNewsCard, setShowNewsCard] = useState(false)
+  const handleToggle = () => {
+    setShowNewsCard(prev => !prev)
+  }
   return (
+    <>
+    {showNewsCard && <NewsCard handleToggle={handleToggle}/>}
     <main className="w-full flex md:flex-row flex-col ">
-      <Sidebar setCountry={setCountry} engVersion={engVersion}/>
-      {tiles ? <News articles={articles} /> : <NewsLines articles={articles} />}
+      
+      <Sidebar setCountry={setCountry} engVersion={engVersion} />
+      {tiles ? <News articles={articles} handleToggle={handleToggle} /> : <NewsLines articles={articles} />}
     </main>
+    </>
   );
 };
 

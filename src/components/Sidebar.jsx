@@ -18,7 +18,7 @@ const Sidebar = ({ setCountry, engVersion }) => {
       </button>
       {showDropdown && (
         <>
-          <ul className="text-center text-xl">
+          <ul className="text-center text-xl animate-fade-in">
             {data.map((country) => (
               <li
                 className="pb-4 flex md:flex-row w-auto justify-center flex-col"
