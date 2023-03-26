@@ -1,25 +1,21 @@
 import React from 'react'
+import news from "../assets/news.jpeg";
 import { AiOutlineCloseSquare } from 'react-icons/ai'
 const NewsCard = ({handleToggle}) => {
     return (
-        <div className="absolute h-screen animate-fade-in z-10 bg-black bg-opacity-80" onClick={handleToggle}>
+        <div className="absolute h-screen animate-fade-in z-10 bg-black bg-opacity-80 w-full" onClick={handleToggle}>
             <div className="m-auto h-auto w-4/5 bg-white rounded-md text-lg text-black flex flex-col p-3 place-content-center border-black border-2 ">
                 <button className='text-4xl text-left w-full flex justify-end hover:text-red-500' onClick={handleToggle}>
                     <AiOutlineCloseSquare />
                 </button>
-                <h1 className="text-xl">Co sprawiło mi trudność?</h1>
-                <h3 className="text-md text-gray-500">
-                    Najmniej pewnie czułem się korzystając z Reduxa. Korzystałem wcześniej
-                    z tej biblioteki, ale nie jest ona moją ulubioną. Początkowo projekt
-                    miał być napisany w Next13 ale z uwagi na stale wprowadzane zmiany i
-                    sporo niedociągnięć bezpieczniejszym było pozostanie przy vanilla
-                    React'cie.
+                <img className='px-2' src={news} alt='news thumbnail' />
+                <h3 className="text-xl ">
+                    Title
                 </h3>
-                <h1 className="text-xl">Co sprawiło mi frajdę?</h1>
-                <h3 className="text-md text-gray-500">
-                    Zdecydowanie API. Bardzo proste i bezproblemowe, dzięki czemu łatwo
-                    sobie z nim poradzić. No i oczywiscie korzystanie z Tailwind zamiast klasycznego css, co znacznie usprawniło tworzenie wersji mobilnej.
-                </h3>
+                <h1 className="text-md text-gray-500">Opis Newsa</h1>
+                <button className="text-white bg-red-600 w-1/5 mx-auto text-2xl rounded hover:scale-110">
+                    Link
+                </button>
             </div>
         </div>
     )
