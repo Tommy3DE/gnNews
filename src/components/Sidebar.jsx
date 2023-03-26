@@ -25,7 +25,7 @@ const Sidebar = ({ setCountry, engVersion }) => {
                 key={country.short}
               >
                 <Link
-                  to={`/${country.short}`}
+                  to={`/country/${country.short}`}
                   onClick={() => setCountry(`${country.short}`)}
                 >
                   {!engVersion ? `${country.name}` : `${country.enName}`}
