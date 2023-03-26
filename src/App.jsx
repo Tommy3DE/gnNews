@@ -33,7 +33,7 @@ function App() {
   
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=dbfbbc250bca485a88577e25376cbb12`
+          `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=12113e94f90644979de437693a1c9b48`
         );
         setArticles(response.data.articles);
         localStorage.setItem(`articles-${country}`, JSON.stringify(response.data.articles));

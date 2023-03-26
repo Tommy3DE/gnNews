@@ -3,7 +3,7 @@ import news from "../assets/news.jpeg";
 import { AiOutlineCloseSquare } from 'react-icons/ai'
 const NewsCard = ({handleToggle}) => {
     return (
-        <div className="absolute h-screen animate-fade-in z-10 bg-black bg-opacity-80 w-full" onClick={handleToggle}>
+        <div className="absolute h-full animate-fade-in z-10 bg-black bg-opacity-80 w-full">
             <div className="m-auto h-auto w-4/5 bg-white rounded-md text-lg text-black flex flex-col p-3 place-content-center border-black border-2 ">
                 <button className='text-4xl text-left w-full flex justify-end hover:text-red-500' onClick={handleToggle}>
                     <AiOutlineCloseSquare />
