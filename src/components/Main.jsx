@@ -30,7 +30,7 @@ const Main = ({ articles, setCountry, tiles, engVersion }) => {
             showNewsCard={showNewsCard}
             handleToggle={handleToggle}
             selectedArticle={selectedArticle} 
-          />
+            />
         )}
       </main>
     </>

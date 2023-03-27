@@ -49,7 +49,7 @@ function App() {
   //korzystam z axios poniewaz jest  duzo lepszy od klasycznego fetcha, klucz apoi nie jest ukryty w .env bo to powszechnie dostepne API i nie ma takiej potrzeby
 
   return (
-    <div>
+    <div className="fle flex-col">
       <Navbar
         handleTiles={handleTiles}
         tiles={tiles}

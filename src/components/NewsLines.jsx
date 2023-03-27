@@ -6,7 +6,7 @@ const NewsLines = ({ articles, handleToggle, showNewsCard, selectedArticle }) =>
     <div className="flex flex-col h-full justify-center w-full">
       {articles.map((article, index) => (
         <div className="p-1 " key={index}>
-          <div className="p-1  md:px-1 flex md:flex-row flex-col justify-between items-center text-black border-2  rounded  w-full">
+          <div className="p-1  md:px-1 flex md:flex-row flex-col justify-between items-center text-black border-2  rounded  w-full" onClick={() => handleToggle(article)}>
             <img
               src={article.urlToImage ? article.urlToImage : news}
               alt={article.author}
@@ -22,6 +22,9 @@ const NewsLines = ({ articles, handleToggle, showNewsCard, selectedArticle }) =>
               </p>
             </div>
           </div>
+          {showNewsCard && selectedArticle === article && (
+              <NewsCard handleToggle={handleToggle} article={article} />
+            )}
         </div>
       ))}
     </div>
