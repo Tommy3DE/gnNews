@@ -1,9 +1,14 @@
 import React from "react";
 import news from "../assets/news.jpeg";
 import NewsCard from "./NewsCard";
+import { useNavigate } from "react-router-dom";
 
 const News = ({ articles, handleToggle, showNewsCard, selectedArticle, engVersion }) => {
-
+  const navigate = useNavigate()
+  const handleClick = (article) => {
+    navigate(`/news?title=${encodeURIComponent(article.title)}`);
+    handleToggle(article);
+  };
   return (
     <>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-4 grid:cols-1 w-auto 2xl:grid-cols-5">
@@ -11,7 +16,7 @@ const News = ({ articles, handleToggle, showNewsCard, selectedArticle, engVersio
           <div className="p-2" key={index}>
             <div
               className="flex flex-col justify-between text-black border-2  rounded p-1 h-full"
-              onClick={() => handleToggle(article)}
+              onClick={() => handleClick(article)}
             >
               <img
                 src={article.urlToImage ? article.urlToImage : news}
