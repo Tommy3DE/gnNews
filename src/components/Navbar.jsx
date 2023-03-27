@@ -27,6 +27,14 @@ const Navbar = ({
               {tiles ? <MdTableRows /> : <BiTable />}
             </button>
           )}
+          {!showModal && (
+            <div
+              onClick={handleLang}
+              className="cursor-pointer hover:scale-110 mx-1"
+            >
+              {engVersion ? "EN" : "PL"}
+            </div>
+          )}
           <button
             type="button"
             className="cursor-pointer hover:scale-110 mx-1 lg:block hidden"
@@ -40,14 +48,6 @@ const Navbar = ({
               </button>
             )}
           </button>
-          {!showModal && (
-            <div
-              onClick={handleLang}
-              className="cursor-pointer hover:scale-110 mx-1"
-            >
-              {engVersion ? "EN" : "PL"}
-            </div>
-          )}
         </div>
       </div>
     </nav>

@@ -9,7 +9,7 @@ const Main = ({ articles, setCountry, tiles, engVersion }) => {
   const [selectedArticle, setSelectedArticle] = useState(null);
 
   const handleToggle = (article) => {
-    setShowNewsCard(!showNewsCard);
+    setShowNewsCard(prev => !prev);
     setSelectedArticle(article);
   };
 
@@ -25,7 +25,12 @@ const Main = ({ articles, setCountry, tiles, engVersion }) => {
             selectedArticle={selectedArticle}
           />
         ) : (
-          <NewsLines articles={articles} />
+          <NewsLines 
+            articles={articles}
+            showNewsCard={showNewsCard}
+            handleToggle={handleToggle}
+            selectedArticle={selectedArticle} 
+          />
         )}
       </main>
     </>

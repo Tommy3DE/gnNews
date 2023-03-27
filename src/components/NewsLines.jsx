@@ -1,7 +1,7 @@
 import React from "react";
 import news from "../assets/news.jpeg";
 
-const NewsLines = ({ articles }) => {
+const NewsLines = ({ articles, handleToggle, showNewsCard, selectedArticle }) => {
   return (
     <div className="flex flex-col h-full justify-center w-full">
       {articles.map((article, index) => (
