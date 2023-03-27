@@ -16,7 +16,7 @@ const News = ({ articles, handleToggle, showNewsCard, selectedArticle }) => {
               <img
                 src={article.urlToImage ? article.urlToImage : news}
                 alt={article.author}
-                className="p-1 rounded-lg md:h-[248px] lg:h-[200px] h-fit"
+                className="p-1 rounded-lg md:h-[248px] h-fit xl:h-[300px] "
               />
 
               <div>

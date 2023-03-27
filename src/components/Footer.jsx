@@ -14,18 +14,16 @@ const Footer = ({ articles, engVersion }) => {
       <div>{time.toLocaleTimeString()}</div>
       <div className="md:block hidden">Copyright {time.getFullYear()}</div>
       {!engVersion ? <div>
-        Na stronie zjaduje się obecnie:{" "}
         <span className="text-xl text-red-600 font-bold ">
-          {articles ? articles.length : 0}
+          {articles ? articles.length : 'Brak'}
         </span>{" "}
-        Artykułów
+        artykułów na stronie
       </div> : 
       <div>
-      On site there are currently:{" "}
       <span className="text-xl text-red-600 font-bold ">
-        {articles ? articles.length : 0}
+        {articles ? articles.length : 'No'}
       </span>{" "}
-      Articles
+      Articles on site
     </div>
       }
     </footer>
