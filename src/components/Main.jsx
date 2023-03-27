@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import News from "./News";
 import NewsLines from "./NewsLines";
-import NewsCard from "./NewsCard";
 
 const Main = ({ articles, setCountry, tiles, engVersion }) => {
   const [showNewsCard, setShowNewsCard] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState(null);
 
   const handleToggle = (article) => {
-    setShowNewsCard(prev => !prev);
+    setShowNewsCard((prev) => !prev);
     setSelectedArticle(article);
   };
 
@@ -19,18 +18,20 @@ const Main = ({ articles, setCountry, tiles, engVersion }) => {
         <Sidebar setCountry={setCountry} engVersion={engVersion} />
         {tiles ? (
           <News
+            engVersion={engVersion}
             articles={articles}
             showNewsCard={showNewsCard}
             handleToggle={handleToggle}
             selectedArticle={selectedArticle}
           />
         ) : (
-          <NewsLines 
+          <NewsLines
+            engVersion={engVersion}
             articles={articles}
             showNewsCard={showNewsCard}
             handleToggle={handleToggle}
-            selectedArticle={selectedArticle} 
-            />
+            selectedArticle={selectedArticle}
+          />
         )}
       </main>
     </>

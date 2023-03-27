@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import news from "../assets/news.jpeg";
 import NewsCard from "./NewsCard";
 
-const News = ({ articles, handleToggle, showNewsCard, selectedArticle }) => {
+const News = ({ articles, handleToggle, showNewsCard, selectedArticle, engVersion }) => {
 
   return (
     <>
@@ -32,7 +32,7 @@ const News = ({ articles, handleToggle, showNewsCard, selectedArticle }) => {
               </div>
             </div>
             {showNewsCard && selectedArticle === article && (
-              <NewsCard handleToggle={handleToggle} article={article} />
+              <NewsCard handleToggle={handleToggle} article={article} engVersion={engVersion}/>
             )}
           </div>
         ))}

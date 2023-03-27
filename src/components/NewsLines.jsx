@@ -1,7 +1,7 @@
 import React from "react";
 import news from "../assets/news.jpeg";
 
-const NewsLines = ({ articles, handleToggle, showNewsCard, selectedArticle }) => {
+const NewsLines = ({ articles, handleToggle, showNewsCard, selectedArticle, engVersion }) => {
   return (
     <div className="flex flex-col h-full justify-center w-full">
       {articles.map((article, index) => (
@@ -23,7 +23,7 @@ const NewsLines = ({ articles, handleToggle, showNewsCard, selectedArticle }) =>
             </div>
           </div>
           {showNewsCard && selectedArticle === article && (
-              <NewsCard handleToggle={handleToggle} article={article} />
+              <NewsCard handleToggle={handleToggle} article={article} engVersion={engVersion} />
             )}
         </div>
       ))}
