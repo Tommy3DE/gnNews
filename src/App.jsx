@@ -1,4 +1,3 @@
-import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -49,7 +48,7 @@ function App() {
   //korzystam z axios poniewaz jest  duzo lepszy od klasycznego fetcha, klucz apoi nie jest ukryty w .env bo to powszechnie dostepne API i nie ma takiej potrzeby
 
   return (
-    <div className="fle flex-col">
+    <div>
       <Navbar
         handleTiles={handleTiles}
         tiles={tiles}

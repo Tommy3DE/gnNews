@@ -3,6 +3,7 @@ import { BiTable } from "react-icons/bi";
 import { MdTableRows } from "react-icons/md";
 import { BsFileEarmarkText } from "react-icons/bs";
 import { AiOutlineCloseSquare } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const Navbar = ({
   handleTiles,
   tiles,
@@ -15,7 +16,9 @@ const Navbar = ({
     <nav>
       <div className="flex flex-row justify-between h-20 bg-blue-500 px-10 text-white">
         <div className="my-auto">
-          <h1 className="text-4xl font-bold">gnNews</h1>
+          <Link to="/country/us">
+            <h1 className="text-4xl font-bold">gnNews</h1>
+          </Link>
         </div>
         <div className="my-auto text-2xl flex">
           {!showModal && (
