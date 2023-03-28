@@ -50,5 +50,3 @@ export const data = [
         enName: 'Ukraine'
     },
 ]
-const klucz1 = '12113e94f90644979de437693a1c9b48'
-const klucz2 = 'dbfbbc250bca485a88577e25376cbb12'

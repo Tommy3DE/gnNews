@@ -3,11 +3,17 @@ import Flag from "react-world-flags";
 import { data } from "../data/data";
 import { Link } from "react-router-dom";
 import { BsArrowUpCircle, BsArrowDownCircle } from "react-icons/bs";
-const Sidebar = ({ setCountry, engVersion }) => {
+import { getCurrCountry } from "../store/reducer";
+import { useDispatch } from "react-redux";
+
+const Sidebar = ({ engVersion }) => {
   const [showDropdown, setShowDropdown] = useState(true);
+  const dispatch = useDispatch()
+
   const handleDropdown = () => {
     setShowDropdown((prev) => !prev);
   };
+
   return (
     <div className="bg-gray-200  px-10 flex flex-col border-r-2 border-gray-400 md:w-1/5 w-full">
       <h2 className="text-2xl py-3 text-center">
@@ -26,7 +32,7 @@ const Sidebar = ({ setCountry, engVersion }) => {
               >
                 <Link
                   to={`/country/${country.short}`}
-                  onClick={() => setCountry(`${country.short}`)}
+                  onClick={() => dispatch(getCurrCountry(`${country.short}`))}
                 >
                   {!engVersion ? `${country.name}` : `${country.enName}`}
                 </Link>

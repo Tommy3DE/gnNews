@@ -5,15 +5,25 @@ import Main from "./components/Main";
 import { useState, useEffect } from "react";
 import Modal from "./components/Modal";
 import axios from "axios";
+import { API_URL } from "./api/api";
+import { useDispatch, useSelector } from "react-redux";
+import { getDataFailure, getInitialData, getDataSuccess } from "./store/reducer";
 
 
 function App() {
+  const dispatch = useDispatch()
+  const {data, isLoading, error, country } = useSelector((state)=>state) 
+  
+  
   const [tiles, setTiles] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [articles, setArticles] = useState([]);
-  const [country, setCountry] = useState("us");
+  // const [country, setCountry] = useState("us");
   const [engVersion, setEngVersion] = useState(false);
 
+
+
+  console.log(isLoading)
   const handleTiles = () => {
     setTiles((prev) => !prev);
   };
@@ -22,30 +32,38 @@ function App() {
     setEngVersion((prev) => !prev);
   };
 
+  const fetchArticles = async () => {
+    dispatch(getInitialData())
+    const cachedData = sessionStorage.getItem(`articles-${country}`);
+    console.log('1')
+    if (cachedData) {
+      const cachedArticleList = JSON.parse(cachedData)
+      dispatch(getDataSuccess(cachedArticleList))
+      setArticles(cachedArticleList);
+      console.log('2')
+      return;
+    }
+
+    try {
+      const response = await axios.get(
+        API_URL(country)
+      );
+      const articleList = response.data.articles
+      dispatch(getDataSuccess(articleList))
+      console.log('3')
+      setArticles(articleList);
+      sessionStorage.setItem(`articles-${country}`, JSON.stringify(articleList));
+    } catch (error) {
+      console.error(error);
+      dispatch(getDataFailure(error))
+    }
+  };
+
   useEffect(() => {
-    const fetchArticles = async () => {
-      const cachedData = localStorage.getItem(`articles-${country}`);
-      if (cachedData) {
-        setArticles(JSON.parse(cachedData));
-        return;
-      }
-  
-      try {
-        const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=12113e94f90644979de437693a1c9b48`
-        );
-        setArticles(response.data.articles);
-        localStorage.setItem(`articles-${country}`, JSON.stringify(response.data.articles));
-      } catch (error) {
-        console.error(error);
-      }
-    };
-  
     fetchArticles();
   }, [country]);
   console.log(articles)
 
-  //korzystam z axios poniewaz jest  duzo lepszy od klasycznego fetcha, klucz apoi nie jest ukryty w .env bo to powszechnie dostepne API i nie ma takiej potrzeby
 
   return (
     <div>
@@ -58,9 +76,8 @@ function App() {
         engVersion={engVersion}
       />
       {showModal && <Modal />}
-      <Main
-        articles={articles}
-        setCountry={setCountry}
+
+      <Main  
         tiles={tiles}
         engVersion={engVersion}
       />

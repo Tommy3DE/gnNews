@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import News from "./News";
 import NewsLines from "./NewsLines";
+import { useSelector } from "react-redux";
 
-const Main = ({ articles, setCountry, tiles, engVersion }) => {
+const Main = ({ tiles, engVersion }) => {
+  const { data, isLoading } = useSelector((state) => state);
   const [showNewsCard, setShowNewsCard] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState(null);
+
+  if (!data?.length) return null;
 
   const handleToggle = (article) => {
     setShowNewsCard((prev) => !prev);
@@ -15,23 +19,29 @@ const Main = ({ articles, setCountry, tiles, engVersion }) => {
   return (
     <>
       <main className="w-full flex md:flex-row flex-col ">
-        <Sidebar setCountry={setCountry} engVersion={engVersion} />
-        {tiles ? (
-          <News
-            engVersion={engVersion}
-            articles={articles}
-            showNewsCard={showNewsCard}
-            handleToggle={handleToggle}
-            selectedArticle={selectedArticle}
-          />
+        <Sidebar engVersion={engVersion} />
+        {isLoading ? (
+          <div className="h-full w-screen">loading</div>
         ) : (
-          <NewsLines
-            engVersion={engVersion}
-            articles={articles}
-            showNewsCard={showNewsCard}
-            handleToggle={handleToggle}
-            selectedArticle={selectedArticle}
-          />
+          <>
+            {tiles ? (
+              <News
+                engVersion={engVersion}
+                articles={data}
+                showNewsCard={showNewsCard}
+                handleToggle={handleToggle}
+                selectedArticle={selectedArticle}
+              />
+            ) : (
+              <NewsLines
+                engVersion={engVersion}
+                articles={data}
+                showNewsCard={showNewsCard}
+                handleToggle={handleToggle}
+                selectedArticle={selectedArticle}
+              />
+            )}
+          </>
         )}
       </main>
     </>
