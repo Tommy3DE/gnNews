@@ -3,6 +3,7 @@ import Sidebar from "./Sidebar";
 import News from "./News";
 import NewsLines from "./NewsLines";
 import { useSelector } from "react-redux";
+import Loading from "./Loading";
 
 const Main = ({ tiles, engVersion }) => {
   const { data, isLoading } = useSelector((state) => state);
@@ -21,7 +22,7 @@ const Main = ({ tiles, engVersion }) => {
       <main className="w-full flex md:flex-row flex-col ">
         <Sidebar engVersion={engVersion} />
         {isLoading ? (
-          <div className="h-full w-screen">loading</div>
+          <Loading/>
         ) : (
           <>
             {tiles ? (
