@@ -23,7 +23,7 @@ const Footer = ({ articles, engVersion }) => {
       <span className="text-xl text-red-600 font-bold ">
         {articles ? articles.length : 'No'}
       </span>{" "}
-      Articles on site
+      articles on site
     </div>
       }
     </footer>

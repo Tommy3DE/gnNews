@@ -23,7 +23,7 @@ function App() {
 
 
 
-  console.log(isLoading)
+  // console.log(isLoading)
   const handleTiles = () => {
     setTiles((prev) => !prev);
   };
@@ -50,7 +50,7 @@ function App() {
       );
       const articleList = response.data.articles
       dispatch(getDataSuccess(articleList))
-      console.log('3')
+      console.log('article success')
       setArticles(articleList);
       sessionStorage.setItem(`articles-${country}`, JSON.stringify(articleList));
     } catch (error) {
