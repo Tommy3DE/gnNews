@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { data } from "autoprefixer";
 
 const initialState = {
     data: [],
@@ -27,10 +26,13 @@ export const dataSlice = createSlice({
         },
         getCurrCountry: (state, action)=>{
             state.country = action.payload
+        },
+        getCurrLanguage: (state, action)=> {
+            state.language = action.payload
         }
     }
 })
 
-export const { getInitialData, getDataSuccess, getDataFailure, getCurrCountry } = dataSlice.actions
+export const { getInitialData, getDataSuccess, getDataFailure, getCurrCountry, getCurrLanguage } = dataSlice.actions
 
 export const reducer = dataSlice.reducer

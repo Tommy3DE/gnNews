@@ -3,7 +3,7 @@ import news from "../assets/news.jpeg";
 import NewsCard from "./NewsCard";
 import { useNavigate } from "react-router-dom";
 
-const News = ({ articles, handleToggle, showNewsCard, selectedArticle, engVersion }) => {
+const News = ({ articles, handleToggle, showNewsCard, selectedArticle }) => {
   const navigate = useNavigate()
   const handleClick = (article) => {
     navigate(`/news?title=${encodeURIComponent(article.title)}`);
@@ -37,7 +37,7 @@ const News = ({ articles, handleToggle, showNewsCard, selectedArticle, engVersio
               </div>
             </div>
             {showNewsCard && selectedArticle === article && (
-              <NewsCard handleToggle={handleToggle} article={article} engVersion={engVersion}/>
+              <NewsCard handleToggle={handleToggle} article={article}/>
             )}
           </div>
         ))}

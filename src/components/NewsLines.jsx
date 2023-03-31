@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import NewsCard from "./NewsCard";
 
-const NewsLines = ({ articles, handleToggle, showNewsCard, selectedArticle, engVersion }) => {
+const NewsLines = ({ articles, handleToggle, showNewsCard, selectedArticle }) => {
   const navigate = useNavigate()
   const handleClick = (article) => {
     navigate(`/news?title=${encodeURIComponent(article.title)}`);
@@ -24,7 +24,7 @@ const NewsLines = ({ articles, handleToggle, showNewsCard, selectedArticle, engV
             </div>
           </div>
           {showNewsCard && selectedArticle === article && (
-              <NewsCard handleToggle={handleToggle} article={article} engVersion={engVersion} />
+              <NewsCard handleToggle={handleToggle} article={article} />
             )}
         </div>
       ))}

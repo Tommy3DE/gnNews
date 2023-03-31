@@ -1,8 +1,8 @@
 const translations = {
     pl: {
-        version: 'PL',
+        version: 'pl',
         sidebar: 'Wybierz kraj',
-        load: 'Ładowanie',
+        load: 'Ładowanie...',
         footer: 'artykułów na stronie',
         us: 'Ameryka',
         pl: 'Polska',
@@ -18,7 +18,7 @@ const translations = {
         footerLength: 'Brak'
     },
     en: {
-        version: 'EN',
+        version: 'en',
         sidebar: 'Choose Country',
         load: 'Loading...',
         footer: 'articles on site',
