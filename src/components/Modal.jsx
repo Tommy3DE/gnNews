@@ -7,10 +7,10 @@ const Modal = () => {
         <h1 className="text-xl">Co sprawiło mi trudność?</h1>
         <h3 className="text-md text-gray-500">
           Najmniej pewnie czułem się korzystając z Reduxa. Korzystałem wcześniej
-          z tej biblioteki, ale nie jest ona moją ulubioną. Początkowo projekt
+          z tej biblioteki, ale nie jest ona moją ulubioną przy małych projektach. Początkowo projekt
           miał być napisany w Next13 ale z uwagi na stale wprowadzane zmiany i
           sporo niedociągnięć bezpieczniejszym było pozostanie przy vanilla
-          React'cie.
+          React'cie zgodnie z .
         </h3>
         <h1 className="text-xl">Co sprawiło mi frajdę?</h1>
         <h3 className="text-md text-gray-500">
